@@ -1,5 +1,5 @@
 class PigLatinizer
 
-  
+  def 
 
 end
