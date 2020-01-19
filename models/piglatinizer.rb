@@ -2,7 +2,7 @@ class PigLatinizer
 
   def piglatinize_each_word(sentence)
     breakdown = sentence.split(" ")
-    word_transform = 
+    word_transform = breakdown.each {}
   end
 
   def piglatinize_word(word)
