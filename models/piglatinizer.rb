@@ -12,7 +12,8 @@ class PigLatinizer
     if ["a", "e", "i", "o", "u"].include?(first_character)
       "#{word}way"
     else
-      
+      consonants = []
+      consonants << word[0]
 
 
     end
