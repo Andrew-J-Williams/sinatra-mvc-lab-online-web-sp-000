@@ -1,5 +1,5 @@
 class PigLatinizer
 
-  def 
+  def piglatinize_each_word
 
 end
