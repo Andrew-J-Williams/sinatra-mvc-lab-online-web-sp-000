@@ -25,7 +25,6 @@ class PigLatinizer
             end
         end
     end
-    #th, ch, sh combos have to stay together
 
     def pig_latinize_string(text)
         a = text.split(' ')
