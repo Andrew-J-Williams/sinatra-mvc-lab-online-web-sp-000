@@ -5,7 +5,7 @@ class PigLatinizer
   end
 
   def piglatinize_word(word)
-    
+    first_character = word[0].downcase
 
 
   end
