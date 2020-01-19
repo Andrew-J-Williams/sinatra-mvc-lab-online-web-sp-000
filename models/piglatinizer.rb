@@ -8,7 +8,7 @@ class PigLatinizer
     first_character = word[0].downcase
 
     if ["a", "e", "i", "o", "u"].include?(first_character)
-
+      "#{word}way"
     else
 
     end
