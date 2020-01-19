@@ -1,6 +1,6 @@
 class PigLatinizer
 
-  def self.piglatinize(sentence)
+  def piglatinize(sentence)
     breakdown = sentence.split(" ")
     word_transform = breakdown.each {|word| piglatinize_word(word)}
     word_transform.join(" ")
