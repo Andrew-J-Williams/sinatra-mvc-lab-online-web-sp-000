@@ -1,31 +1,36 @@
 class PigLatinizer
 
-  def .piglatinize(sentence)
-    breakdown = sentence.split(" ")
-    word_transform = breakdown.each {|word| piglatinize_word(word)}
-    word_transform.join(" ")
-  end
-
-  def piglatinize_word(word)
-    first_character = word[0].downcase
-
-    if ["a", "e", "i", "o", "u"].include?(first_character)
-      "#{word}way"
-    else
-      consonants = []
-      consonants << word[0]
-
-      if ["a", "e", "i", "o", "u"].include?(word[1]) == false
-        consonants << word[1]
-        if ["a", "e", "i", "o", "u"].include?(word[2]) == false
-          consonants << word[2]
+  def text_define(text)
+        if text.split(/\s/).length == 1
+            pig_latinize_word(text)
+        elsif text.split(/\s/).length > 1  
+            pig_latinize_string(text)
         end
-      end
-
-      "#{word[consonants.length..-1] + consonants.join + "ay"}"
-
     end
 
-  end
+    def pig_latinize_word(text)
+        #first_letter = text.split('')[0]
+        if ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "H"].include?(text.split('')[0])
+            "#{text}way"
+        else 
+            #second_letter = text.split('')[1]
+            #third_letter = text.split('')[2]
+            #fourth_letter = text.split('')[3]
+            if ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "H", "Y"].include?(text.split('')[1])
+                "#{text[1..-1]}#{text.split('')[0]}ay"
+            elsif ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "H", "Y"].include?(text.split('')[2])
+                "#{text[2..-1]}#{text.split('')[0]}#{text.split('')[1]}ay" 
+            elsif ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "H", "Y"].include?(text.split('')[3])
+                "#{text[3..-1]}#{text.split('')[0]}#{text.split('')[1]}#{text.split('')[2]}ay"
+            end
+        end
+    end
+    #th, ch, sh combos have to stay together
+
+    def pig_latinize_string(text)
+        a = text.split(' ')
+        b= a.map {|word| pig_latinize_word(word)}
+        b.join(' ')
+    end
 
 end
