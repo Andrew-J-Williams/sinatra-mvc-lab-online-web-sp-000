@@ -13,6 +13,8 @@ class PigLatinizer
       "#{word}way"
     else
       
+
+
     end
 
   end
