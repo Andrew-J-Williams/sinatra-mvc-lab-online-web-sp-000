@@ -1,7 +1,7 @@
 class PigLatinizer
 
   def piglatinize_each_word(sentence)
-    
+    breakdown = 
   end
 
   def piglatinize_word(word)
